@@ -91,7 +91,7 @@ namespace RandomNumberGenerator
 
             if (IsPowerOfTwo(modulus) && (increment != 0))
             {
-                if (IsRelativelyPrime(increment, modulus))
+                if (IsRelativelyPrime(increment, modulus) && (multiplier == ((4 * k) + 1)))
                 {
                     LongestPeriod = modulus;
                     check1 = false;
@@ -99,7 +99,7 @@ namespace RandomNumberGenerator
             }
             if (IsPowerOfTwo(modulus) && (increment == 0))
             {
-                if (IsSeedOdd(x0) && (multiplier == (5 + 8 * k)))
+                if (IsSeedOdd(x0) && ((multiplier == (5 + (8 * k))) || (multiplier == (3 + (8 * k)))))
                 {
                     LongestPeriod = modulus / 4;
                     check2 = false;
