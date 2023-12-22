@@ -29,7 +29,7 @@ namespace RandomNumberGenerator
                 MessageBox.Show("Invalid Input, Please Enter Valid Input");
             }else
             {
-
+                
                 double seed = double.Parse(seedTextBox.Text);
                 double multiplier = double.Parse(multiplierTextBox.Text);
                 double increment = double.Parse(incrementTextBox.Text);
@@ -134,9 +134,6 @@ namespace RandomNumberGenerator
 
         public bool IsPrime(double modulus)
         {
-            if (modulus <= 1)
-                return false;
-
             for (int i = 2; i < modulus; i++)
             {
                 if (modulus % i == 0)
