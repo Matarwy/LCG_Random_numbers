@@ -137,7 +137,7 @@ namespace RandomNumberGenerator
             if (modulus <= 1)
                 return false;
 
-            for (int i = 2; i <= Math.Sqrt(modulus); i++)
+            for (int i = 2; i < modulus; i++)
             {
                 if (modulus % i == 0)
                     return false;
@@ -173,9 +173,9 @@ namespace RandomNumberGenerator
 
         public bool IsSeedOdd(double seed)
         {
-            if (seed % 2 != 0)
-                return true;
-            return false;
+            if (seed % 2 == 0)
+                return false;
+            return true;
         }
 
 
@@ -190,30 +190,5 @@ namespace RandomNumberGenerator
             return true;
         }
 
-
-        public List<double> getPrimeNumbers(double number)
-        {
-            List<double> primeNumbers = new List<double>();
-            bool isPrime = true;
-
-            for (int i = 2; i <= number; i++)
-            {
-                for (int j = 2; j <= number; j++)
-                {
-                    if (i != j && i % j == 0)
-                    {
-                        isPrime = false;
-                        break;
-                    }
-                }
-                if (isPrime)
-                {
-                    primeNumbers.Add(i);
-                }
-                isPrime = true;
-            }
-
-            return primeNumbers;
-        }
     }
 }
